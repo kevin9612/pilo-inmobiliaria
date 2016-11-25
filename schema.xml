@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="inmobiliaria" defaultIdMethod="native" defaultPhpNamingMethod="underscore">
+  <table name="apartamentos" idMethod="native" phpName="Apartamentos">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="direccion" phpName="Direccion" type="VARCHAR" size="30" required="true"/>
+    <column name="descripcion" phpName="Descripcion" type="VARCHAR" size="50" required="true"/>
+    <column name="id_tipo" phpName="IdTipo" type="INTEGER" required="true"/>
+    <column name="precio" phpName="Precio" type="INTEGER" required="true"/>
+    <column name="latitud" phpName="Latitud" type="DOUBLE" required="true"/>
+    <column name="longitud" phpName="Longitud" type="DOUBLE" required="true"/>
+    <foreign-key foreignTable="tipos" name="apartamentos_ibfk_1">
+      <reference local="id_tipo" foreign="id"/>
+    </foreign-key>
+    <index name="id_tipo">
+      <index-column name="id_tipo"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="comentarios" idMethod="native" phpName="Comentarios">
+    <column name="id_apartamento" phpName="IdApartamento" type="INTEGER" required="true"/>
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="comentarios" phpName="Comentarios" type="VARCHAR" size="500" required="true"/>
+    <foreign-key foreignTable="apartamentos" name="comentarios_ibfk_1">
+      <reference local="id_apartamento" foreign="id"/>
+    </foreign-key>
+    <index name="id_apartamento">
+      <index-column name="id_apartamento"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="personas" idMethod="native" phpName="Personas">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="nombre" phpName="Nombre" type="VARCHAR" size="20" required="true"/>
+    <column name="apellido" phpName="Apellido" type="VARCHAR" size="20" required="true"/>
+    <column name="identificacion" phpName="Identificacion" type="VARCHAR" size="20" required="true"/>
+    <column name="correoelectronico" phpName="Correoelectronico" type="VARCHAR" size="20" required="true"/>
+    <column name="id_usuario" phpName="IdUsuario" type="INTEGER" required="true"/>
+    <foreign-key foreignTable="usuarios" name="personas_ibfk_1">
+      <reference local="id_usuario" foreign="id"/>
+    </foreign-key>
+    <index name="id_usuario">
+      <index-column name="id_usuario"/>
+    </index>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="tipos" idMethod="native" phpName="Tipos">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="nombre" phpName="Nombre" type="VARCHAR" size="20" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="usuarios" idMethod="native" phpName="Usuarios">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="login" phpName="Login" type="VARCHAR" size="20" required="true"/>
+    <column name="password" phpName="Password" type="VARCHAR" size="20" required="true"/>
+    <column name="tipo" phpName="Tipo" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+</database>

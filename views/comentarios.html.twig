@@ -1,0 +1,68 @@
+
+<head>
+     <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <link data-require="bootstrap@*" data-semver="4.0.0-alpha.2" rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" />
+    <script type="text/javascript" src="script.js"></script>
+    <script data-require="bootstrap@*" data-semver="4.0.0-alpha.2" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap --> 
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.min.js"></script><!-- Bootstrap --> 
+    <link rel="stylesheet" href="{{ app.request.basepath }}/css/home.css" />
+  </head>
+
+  <body>
+    <div id="fullscreen_bg" class="fullscreen_bg">
+          <div class="container">
+           
+              <div class="col-lg-5 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
+
+        <table id="mytable" class="table table-bordred table-striped" style="width: 400px; height: 100px;">
+
+          <thead>
+            <th>Comentarios</th>
+            </thead>
+          
+          <tbody>
+            
+             {% for co in comentario %}
+           
+             <tr>
+            <td align="justify">{{ co.comen}}</td>
+            </tr>
+             {% endfor %}
+             
+             <form class="form-signin" action="{{ url('docomentarios') }}" method="post">
+            <input type="hidden" name="id" value="{{ id }}">
+            <tr>
+             <td>
+              <input type="text" class="form-control" placeholder="Comentario" required="" autofocus="" name="comentario"/>
+              </td>
+              <td>
+                 <button class="btn btn-danger btn-xs" data-title="Borrar">
+                      <i class="glyphicon glyphicon-ok"></i>
+                    </button>
+                    
+                    </form>
+              </td>
+             </tr>
+            
+          </tbody>
+
+        </table>
+
+        
+             
+              </div>
+            </div>
+              <form action="{{ url('apartamentos') }}">
+               <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 300px; margin: 10 640;">
+			         Volver
+	        	  </button>
+         	    </form>
+             </div>
+            </div>
+      </div>
+    
+  </body>
+
+</html>

@@ -1,0 +1,92 @@
+
+<head>
+     <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <link data-require="bootstrap@*" data-semver="4.0.0-alpha.2" rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" />
+    <script type="text/javascript" src="script.js"></script>
+    <script data-require="bootstrap@*" data-semver="4.0.0-alpha.2" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap --> 
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.min.js"></script><!-- Bootstrap --> 
+    <link rel="stylesheet" href="{{ app.request.basepath }}/css/home.css" />
+  </head>
+
+  <body>
+    <div id="fullscreen_bg" class="fullscreen_bg">
+          <div class="container">
+          <div class="col-lg-5 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container" style="width: 540px;"> 
+
+        <table id="mytable" class="table table-bordred table-striped" style="width: 300px; height: 100px;">
+
+          <thead>
+            <th>Id</th>
+            <th>Dirección</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Nombre</th>
+            <th>Mapa</th>
+            
+          
+          
+          </thead>
+          
+          <tbody>
+            
+            {% for apa in apar %}
+            
+              <tr>
+                
+                
+              <td>{{ apa.id}}</td>
+              <td>{{ apa.direccion}}</td>
+              <td>{{ apa.descripcion}}</td>
+              <td>{{ apa.precio}}</td>
+              <td>{{ apa.nombre}}</td>
+            
+                <td>
+                  <form method="post" action='{{ url('mapaapartamentos') }}'>
+                <p data-placement="top" data-toggle="tooltip" title="Mapa">
+                  <input type="hidden" name="id" value="{{ apa.id }}">
+                  <a href="">
+                    <button class="btn btn-primary btn-xs" data-title="Mapa" >
+                      <i class="glyphicon glyphicon-upload"></i>
+                    </button>
+                  </a>
+                </p>
+                </form>
+                </td>
+                <td>
+                 <form action='{{ url('comentarios') }}'>
+                <p data-placement="top" data-toggle="tooltip" title="Comentario">
+                  <input type="hidden" name="id" value="{{ apa.id }}">
+                  <a href="">
+                    <button class="btn btn-primary btn-xs" data-title="Comentario" >
+                      <i class="	glyphicon glyphicon-forward"></i>
+                    </button>
+                  </a>
+                </p>
+                </form>
+              </td>
+                    </button>
+                  </a>
+                </p>
+              </td>
+            </tr>
+             {% endfor %}
+            <tr>
+	       
+            </tr>
+          </tbody>
+        </table>
+              </div>
+              </div>
+                <form action="{{ url('home') }}">
+               <button class="btn btn-lg btn-primary btn-block" type="submit" style="width: 300px; margin: 10 700;">
+			         Volver
+	        	  </button>
+         	    </form>
+             </div>
+            </div>
+      </div>
+  </body>
+
+</html>

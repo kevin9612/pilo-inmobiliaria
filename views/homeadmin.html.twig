@@ -1,0 +1,113 @@
+<html>
+
+  <head>
+     <script data-require="jquery@*" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <link data-require="bootstrap@*" data-semver="4.0.0-alpha.2" rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" />
+    <script type="text/javascript" src="{{ app.request.basepath }}/js/script.js"></script>
+    <script data-require="bootstrap@*" data-semver="4.0.0-alpha.2" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap --> 
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.min.js"></script><!-- Bootstrap --> 
+    <link rel="stylesheet" href="{{ app.request.basepath }}/css/home.css" />
+  </head>
+
+  <body>
+    <div id="fullscreen_bg" class="fullscreen_bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-5 col-md-12 col-sm-8 col-xs-9 bhoechie-tab-container">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 bhoechie-tab-menu">
+              <ul class="list-group">
+                <a href="#" class="list-group-item active">
+                  <br />
+                  <br />
+                  <i class="glyphicon glyphicon-home"></i>
+
+ Inicio                                    <br />
+                  <br />
+                </a>
+                <a href="" class="list-group-item ">
+                  <br />
+                  <br />
+                  <i class="glyphicon glyphicon-picture"></i>
+
+ Apartamentos                                     <br />
+                  <br />
+                </a>
+                <a href="#" class="list-group-item">
+                  <br />
+                  <br />
+                  <h4 class="glyphicon glyphicon-th-list"></h4>
+
+Formulario                                  <br />
+                  <br />
+                </a>
+                <a href="#" class="list-group-item">
+                  <br />
+                  <br />
+                  <h4 class="glyphicon glyphicon-log-out"></h4>
+
+ Cerrar sesión                                      <br />
+                  <br />
+                </a>
+              </ul>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 bhoechie-tab">
+              <!-- flight section -->
+              <div class="bhoechie-tab-content active">
+                <center>
+                  <h1 class="glyphicon glyphicon-wrench" style="font-size:14em;color:#00001a"></h1>
+                  <h2 style="margin-top: 0;color:#00001a">Bienvenidos</h2>
+                  <h3 style="margin-top: 0;color:#00001a">a Pilo-inmobiliaria</h3>
+                  <h3 style="margin-top: 0;color:#00001a">(Administrador)</h3>
+                </center>
+              </div>
+              <div class="bhoechie-tab-content">
+                <center>
+                  <h1 class="glyphicon glyphicon-picture" style="font-size:12em;color:#00001a"></h1>
+                  <h4 align="justify">En esta sección encontrara el listado con toda la información de los apartamentos localizados en distintos sectores de la ciudad</h4>
+                  <h2 style="margin-top: 0;color:#00001a">
+                    <form class="form-signin" action="{{ url('apartamentosadmin') }}">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">
+		                	Apartamentos
+	                	</button>
+	                	</form>
+                  </h2>
+                </center>
+              </div>
+              <div class="bhoechie-tab-content">
+                <center>
+                  <h1 class="glyphicon glyphicon-th-list" style="font-size:12em;color:#00001a"></h1>
+                  <h4 align="justify">En esta seccion encontrara el formulario para hacer la respectiva actualizacion de los datos</h4>
+                  <h2 style="margin-top: 0;color:#00001a">
+                      <form class="form-signin" action="{{ url('formulario') }}" method="get">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">
+		                Formulario
+	                	</button>
+	                	</form>
+                  </h2>
+                </center>
+              </div>
+              <div class="bhoechie-tab-content">
+                <center>
+                  <h1 class="glyphicon glyphicon-log-out" style="font-size:12em;color:#00001a"></h1>
+                  <h4>Cerrar sesión</h4>
+                  <h2 style="margin-top: 0;color:#00001a">
+                    <form class="form-signin" action="{{ url('logout') }}" method="post">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">
+                      Log Out
+                      </button>
+                      </form>
+		                	
+	                	
+                  </h2>
+                </center>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

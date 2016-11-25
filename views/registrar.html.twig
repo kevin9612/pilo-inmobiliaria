@@ -1,0 +1,31 @@
+<html>
+
+  <head>
+    <link data-require="bootstrap@*" data-semver="4.0.0-alpha.2" rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" />
+    <script data-require="bootstrap@*" data-semver="4.0.0-alpha.2" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="{{ app.request.basepath }}/css/style.css" />
+  </head>
+
+  <body>
+    <div id="fullscreen_bg" class="fullscreen_bg">
+      <div class="container">
+        <form class="form-signin" method="post" action="{{ url('doregister') }}">
+          <h1 class="form-signin-heading text-muted">Formulario de registro</h1>
+          <input type="text" class="form-control" placeholder="Nombre" name="nombre" required="" autofocus="" />
+          <input type="text" class="form-control" placeholder="Apellido" required="" name="apellido" autofocus="" />
+          <input type="text" class="form-control" placeholder="Identificacion" required="" name="identificacion" autofocus="" />
+          <input type="text" class="form-control" placeholder="Correo Electronico" required="" name="correo" autofocus="" />
+          <input type="text" class="form-control" placeholder="Usuario" required="" name="usuario" autofocus="" />
+          <input type="password" class="form-control" placeholder="Contraseña" name="password" required="" />
+          <button class="btn btn-lg btn-primary btn-block" type="submit">
+			Registrar
+		</button>
+        </form>
+        
+        
+        </form>
+      </div>
+    </div>
+  </body>
+
+</html>

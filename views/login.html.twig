@@ -1,0 +1,32 @@
+<html>
+
+  <head>
+    <link data-require="bootstrap@*" data-semver="4.0.0-alpha.2" rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" />
+    <script data-require="bootstrap@*" data-semver="4.0.0-alpha.2" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="{{ app.request.basepath }}/css/style.css" />
+  </head>
+
+  <body>
+    <div id="fullscreen_bg" class="fullscreen_bg">
+      <div class="container">
+        <form class="form-signin" action="{{ url('dologin') }}" method="post">
+           <input type="hidden" name="direccion" value="{{ direccion }}">
+          <h1 class="form-signin-heading text-muted">Sign In</h1>
+           <input type="hidden" name="id" value="{{ com }}">
+          <input type="text" class="form-control" placeholder="Usuario" required="" autofocus="" name="usuario"/>
+          <input type="password" class="form-control" placeholder="Contraseña" required="" name="password"/>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">
+			Sign In
+		</button>
+        </form>
+        
+         <form class="form-signin" action="{{ url('register') }}">
+          <button class="btn btn-lg btn-primary btn-block" type="submit">
+			Registrarse
+		</button>
+		</form>
+      </div>
+    </div>
+  </body>
+
+</html>
